@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikSave AI - HD No Watermark 2026</title>
+    <style>
+        :root {
+            --tt-cyan: #00f2ea;
+            --tt-pink: #ff0050;
+            --tt-black: #010101;
+            --tt-card: #121212;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: var(--tt-black);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            /* Subscriptions to pop-under ads happen here */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .glass-card {
+            background: var(--tt-card);
+            border: 1px solid #333;
+            border-radius: 32px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 242, 234, 0.1);
+        }
+
+        .logo-area {
+            font-size: 50px;
+            margin-bottom: 10px;
+            filter: drop-shadow(2px 0px 0px var(--tt-cyan)) drop-shadow(-2px 0px 0px var(--tt-pink));
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 20px;
+            background: #222;
+            border: 2px solid #333;
+            border-radius: 18px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--tt-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3);
+        }
+
+        .main-btn {
+            width: 100%;
+            padding: 18px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 18px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: var(--tt-cyan);
+            transform: scale(1.02);
+        }
+
+        #result {
+            margin-top: 30px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        video {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+        }
+
+        .dl-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 10px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .nwm-btn { background: var(--tt-pink); color: white; }
+        .music-btn { background: #333; color: white; }
+
+        .loading-dots { display: none; margin: 20px 0; color: var(--tt-cyan); font-weight: bold; }
+    </style>
+</head>
+<body onclick="triggerPopUnder()">
+
+<div class="container">
+    <div class="glass-card">
+        <div class="logo-area">🎵</div>
+        <h1>TikSave AI</h1>
+        <p class="subtitle">Download HD • No Watermark • 2026</p>
+
+        <div class="input-wrapper">
+            <input type="text" id="ttUrl" placeholder="Paste link here...">
+        </div>
+        
+        <button class="main-btn" onclick="startProcess()">🚀 Remove Watermark</button>
+
+        <div id="loader" class="loading-dots">⚡ AI PROCESSING...</div>
+
+        <div id="result">
+            <div id="videoContainer"></div>
+            <a id="hdLink" class="dl-btn nwm-btn" onclick="triggerAd()" target="_blank">📥 Download HD Video</a>
+            <a id="musicLink" class="dl-btn music-btn" onclick="triggerAd()" target="_blank">🎵 Download MP3</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- ADVERTISING CONFIG ---
+    const AD_LINK = "YOUR_AD_NETWORK_URL_HERE"; 
+    let hasPopped = false;
+
+    function triggerPopUnder() {
+        if (!hasPopped) {
+            window.open(AD_LINK, '_blank');
+            hasPopped = true;
+        }
+    }
+
+    function triggerAd() {
+        window.open(AD_LINK, '_blank');
+    }
+
+    async function startProcess() {
+        const url = document.getElementById('ttUrl').value;
+        if (!url.includes('tiktok.com')) {
+            alert("❌ Link Error");
+            return;
+        }
+
+        // Ad #2: Trigger when they click the process button
+        triggerAd();
+
+        document.getElementById('loader').style.display = 'block';
+        document.getElementById('result').style.display = 'none';
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '6439c72c5amsh6e3ab48fd91163bp12cc0bjsn12da6d144218',
+                'x-rapidapi-host': 'tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com'
+            }
+        };
+
+        try {
+            // Using the rich response you subscribed to
+            const response = await fetch(`https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/rich_response/index?url=${encodeURIComponent(url)}`, options);
+            const data = await response.json();
+
+            // Support for both standard and rich response structures
+            const video = data.video || (data.video_data && data.video_data.nwm_video_url_HQ) || data.nwm_video_url;
+            const music = data.music || (data.music_data && data.music_data.music_url);
+
+            if (video) {
+                document.getElementById('videoContainer').innerHTML = `<video src="${video}" controls autoplay muted></video>`;
+                document.getElementById('hdLink').href = video;
+                if (music) document.getElementById('musicLink').href = music;
+                
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert("⚠️ Post is private or restricted.");
+            }
+        } catch (e) {
+            alert("Connection Busy. Ads refreshing...");
+        } finally {
+            document.getElementById('loader').style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
