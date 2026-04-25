@@ -23,15 +23,20 @@
             color: white;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             overflow-x: hidden;
+            padding: 10px;
         }
+
+        /* AD CONTAINERS */
+        .ad-top { width: 100%; max-width: 728px; min-height: 90px; margin: 10px 0; background: #111; display: flex; justify-content: center; align-items: center; border-radius: 8px; }
+        .ad-native { width: 100%; margin: 20px 0; background: #111; border-radius: 12px; padding: 10px; }
+        .ad-bottom { width: 100%; max-width: 320px; min-height: 50px; margin: 20px 0; }
 
         .container {
             width: 100%;
             max-width: 450px;
-            padding: 20px;
             z-index: 2;
         }
 
@@ -39,33 +44,18 @@
             background: var(--tt-card);
             border: 1px solid #333;
             border-radius: 32px;
-            padding: 40px 25px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 0 40px rgba(0, 242, 234, 0.1);
         }
 
-        .logo-area {
-            font-size: 50px;
-            margin-bottom: 10px;
-            filter: drop-shadow(2px 0px 0px var(--tt-cyan)) drop-shadow(-2px 0px 0px var(--tt-pink));
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 5px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
+        .logo-area { font-size: 45px; margin-bottom: 10px; filter: drop-shadow(2px 0px 0px var(--tt-cyan)) drop-shadow(-2px 0px 0px var(--tt-pink)); }
+        h1 { font-size: 26px; font-weight: 900; margin-bottom: 5px; }
+        .subtitle { color: #888; font-size: 13px; margin-bottom: 25px; }
 
         input {
             width: 100%;
-            padding: 20px;
+            padding: 18px;
             background: #222;
             border: 2px solid #333;
             border-radius: 18px;
@@ -73,13 +63,10 @@
             font-size: 16px;
             outline: none;
             transition: 0.3s;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        input:focus {
-            border-color: var(--tt-cyan);
-            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3);
-        }
+        input:focus { border-color: var(--tt-cyan); box-shadow: 0 0 15px rgba(0, 242, 234, 0.3); }
 
         .main-btn {
             width: 100%;
@@ -91,77 +78,68 @@
             font-size: 18px;
             font-weight: 800;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
-        .main-btn:hover {
-            background: var(--tt-cyan);
-            transform: scale(1.02);
-        }
+        .main-btn:hover { background: var(--tt-cyan); transform: scale(1.02); }
 
-        #result {
-            margin-top: 30px;
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
+        #result { margin-top: 25px; display: none; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        video {
-            width: 100%;
-            border-radius: 20px;
-            border: 1px solid #444;
-            margin-bottom: 20px;
-        }
+        video { width: 100%; border-radius: 15px; border: 1px solid #444; margin-bottom: 15px; }
 
         .dl-btn {
             display: block;
             width: 100%;
             padding: 16px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border-radius: 14px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.3s;
             text-align: center;
         }
 
         .nwm-btn { background: var(--tt-pink); color: white; }
         .music-btn { background: #333; color: white; }
-
-        .loading-dots { display: none; margin: 20px 0; color: var(--tt-cyan); font-weight: bold; }
+        .loading-dots { display: none; margin: 15px 0; color: var(--tt-cyan); font-weight: bold; font-size: 14px; }
     </style>
 </head>
 <body onclick="triggerPopUnder()">
 
-<div class="container">
-    <div class="glass-card">
-        <div class="logo-area">🎵</div>
-        <h1>TikSave AI</h1>
-        <p class="subtitle">Download HD • No Watermark • 2026</p>
-
-        <div class="input-wrapper">
-            <input type="text" id="ttUrl" placeholder="Paste TikTok link here...">
+    <div class="ad-top">
         </div>
-        
-        <button class="main-btn" onclick="startProcess()">🚀 Remove Watermark</button>
 
-        <div id="loader" class="loading-dots">⚡ AI PROCESSING...</div>
+    <div class="container">
+        <div class="glass-card">
+            <div class="logo-area">🎵</div>
+            <h1>TikSave AI</h1>
+            <p class="subtitle">Cloud Processing • HD Quality • 2026</p>
 
-        <div id="result">
-            <div id="videoContainer"></div>
-            <a id="hdLink" class="dl-btn nwm-btn" onclick="triggerAd()" target="_blank">📥 Download HD Video</a>
-            <a id="musicLink" class="dl-btn music-btn" onclick="triggerAd()" target="_blank">🎵 Download MP3</a>
+            <input type="text" id="ttUrl" placeholder="Paste link here...">
+            <button class="main-btn" onclick="startProcess()">🚀 Remove Watermark</button>
+
+            <div id="loader" class="loading-dots">⚡ AI SCRAPING IN PROGRESS...</div>
+
+            <div id="result">
+                <div id="videoContainer"></div>
+                
+                <div class="ad-native">
+                    </div>
+
+                <a id="hdLink" class="dl-btn nwm-btn" onclick="triggerAd()" target="_blank">📥 Download HD Video</a>
+                <a id="musicLink" class="dl-btn music-btn" onclick="triggerAd()" target="_blank">🎵 Download MP3</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="ad-bottom">
+        </div>
 
 <script>
-    // --- YOUR DIRECT REVENUE LINK ---
+    // --- AD UNIT 2: DIRECT LINK (Pop-under) ---
     const AD_LINK = "https://www.profitablecpmratenetwork.com/h51mzayg5i?key=eed851e89793c68d16b05fa9d70c915a"; 
     let hasPopped = false;
 
-    // Pop-under ad on first click anywhere on the page
     function triggerPopUnder() {
         if (!hasPopped) {
             window.open(AD_LINK, '_blank');
@@ -169,7 +147,6 @@
         }
     }
 
-    // Explicit ad trigger for buttons
     function triggerAd() {
         window.open(AD_LINK, '_blank');
     }
@@ -177,11 +154,11 @@
     async function startProcess() {
         const url = document.getElementById('ttUrl').value;
         if (!url.includes('tiktok.com')) {
-            alert("❌ Please paste a valid TikTok link");
+            alert("❌ Invalid Link");
             return;
         }
 
-        // Trigger ad when they start the process
+        // Trigger Pop Ad on button click
         triggerAd();
 
         document.getElementById('loader').style.display = 'block';
@@ -209,10 +186,10 @@
                 
                 document.getElementById('result').style.display = 'block';
             } else {
-                alert("⚠️ Video not found. Make sure the post is public.");
+                alert("⚠️ Video Restricted. Try another link.");
             }
         } catch (e) {
-            alert("Server Busy. Please refresh and try again.");
+            alert("Connection timed out. Retrying...");
         } finally {
             document.getElementById('loader').style.display = 'none';
         }
