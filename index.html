@@ -8,14 +8,14 @@
     <script src="https://pl29259046.profitablecpmratenetwork.com/e8/11/06/e81106a3bff6ac57ce2a8d0938c2ef3e.js"></script>
 
     <style>
-        /* YOUR ORIGINAL NEON DESIGN */
         :root { --tt-cyan: #00f2ea; --tt-pink: #ff0050; --tt-black: #010101; --tt-card: #121212; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--tt-black); color: white; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 10px; }
         
         /* AD CONTAINERS */
-        .ad-728 { width: 100%; max-width: 728px; min-height: 95px; margin: 10px 0; display: flex; justify-content: center; }
-        .ad-320 { width: 100%; max-width: 320px; min-height: 55px; margin: 15px 0; display: flex; justify-content: center; }
+        .ad-728 { width: 100%; max-width: 728px; min-height: 95px; margin: 10px 0; display: flex; justify-content: center; overflow: hidden; }
+        .ad-320 { width: 100%; max-width: 320px; min-height: 55px; margin: 15px 0; display: flex; justify-content: center; overflow: hidden; }
+        .ad-native { width: 100%; margin: 20px 0; min-height: 150px; border-top: 1px solid #333; padding-top: 15px; }
 
         .container { width: 100%; max-width: 450px; z-index: 2; }
         .glass-card { background: var(--tt-card); border: 1px solid #333; border-radius: 32px; padding: 30px 20px; text-align: center; box-shadow: 0 0 40px rgba(0, 242, 234, 0.1); }
@@ -34,22 +34,20 @@
         .nwm-btn { background: var(--tt-pink); color: white; }
         .reset-btn { background: #444; color: white; border: none; }
 
-        /* MODAL STYLES */
-        #appModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 999; justify-content: center; align-items: center; }
+        /* MODAL */
+        #appModal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:999; justify-content:center; align-items:center; }
         .modal-content { background: #121212; padding: 30px; border-radius: 25px; border: 2px solid var(--tt-cyan); width: 90%; max-width: 350px; text-align: center; }
 
         .loading-dots { display: none; margin: 15px 0; color: var(--tt-cyan); font-weight: bold; }
-
-        /* SEO SECTION (Added for ranking, hidden from design focus) */
-        .seo-footer { max-width: 800px; padding: 40px 20px; color: #555; font-size: 13px; text-align: left; line-height: 1.6; }
-        .seo-footer h2 { color: #888; font-size: 18px; margin-bottom: 10px; }
+        
+        .seo-footer { max-width: 800px; padding: 40px 20px; color: #444; font-size: 12px; text-align: center; line-height: 1.5; }
     </style>
 </head>
 <body>
 
     <div class="ad-728">
         <script>atOptions = { 'key' : '3cf84b24d3c6f1ee8b714aaad7e8a03f', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };</script>
-        <script src="//www.highperformanceformat.com/3cf84b24d3c6f1ee8b714aaad7e8a03f/invoke.js"></script>
+        <script src="https://www.highperformanceformat.com/3cf84b24d3c6f1ee8b714aaad7e8a03f/invoke.js"></script>
     </div>
 
     <div class="container">
@@ -68,9 +66,14 @@
             <div id="result">
                 <div id="videoContainer"></div>
                 <a id="hdLink" class="dl-btn nwm-btn" 
-                   style="background: linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 8px 20px rgba(34,197,94,0.3);" 
+                   style="background: linear-gradient(135deg, #22c55e, #16a34a);" 
                    onclick="triggerAd()" target="_blank">📥 Download HD Video</a>
                 
+                <div class="ad-native">
+                    <script async="async" data-cfasync="false" src="https://pl29259349.profitablecpmratenetwork.com/0ca46243431b5cf7563746ff62de639d/invoke.js"></script>
+                    <div id="container-0ca46243431b5cf7563746ff62de639d"></div>
+                </div>
+
                 <button class="dl-btn reset-btn" onclick="location.reload()">🔄 Download New Video</button>
             </div>
 
@@ -80,25 +83,25 @@
 
     <div class="ad-320">
         <script>atOptions = { 'key' : '9af337ad78bd32f5be8cf1938eecda4a', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };</script>
-        <script src="//www.highperformanceformat.com/9af337ad78bd32f5be8cf1938eecda4a/invoke.js"></script>
+        <script src="https://www.highperformanceformat.com/9af337ad78bd32f5be8cf1938eecda4a/invoke.js"></script>
     </div>
 
     <div id="appModal">
         <div class="modal-content">
             <h2 style="color:white; margin-bottom:10px;">Download App</h2>
             <p style="color:#888; font-size:14px; margin-bottom:20px;">Faster downloads directly on your phone.</p>
-            <a href="https://raw.githubusercontent.com/jkingayk-devs/TikSave-AI/main/TikSave-AI_v2.3.apk" class="dl-btn nwm-btn">Download APK Now</a>
+            <a href="https://raw.githubusercontent.com/jkingayk-devs/TikSave-AI/main/TikSave-AI_v2.3.apk" 
+               class="dl-btn nwm-btn" onclick="triggerAd()">Download APK Now</a>
             <p style="margin-top:15px; color:var(--tt-pink); cursor:pointer;" onclick="closeAppModal()">Close</p>
         </div>
     </div>
 
     <div class="seo-footer">
-        <h2>Best TikTok Video Downloader</h2>
-        <p>TikSave AI allows you to save TikTok videos without watermark in HD MP4. It is the fastest tool in 2026 for video extraction. Simply paste the link and download. Safe, secure, and free.</p>
-        <p>© 2026 Abrdns.com</p>
+        <p>Best TikTok Downloader 2026 • No Watermark HD MP4 • Part of Abrdns Network</p>
     </div>
 
 <script>
+    // 4. DIRECT LINK TRIGGER
     const AD_LINK = "https://www.profitablecpmratenetwork.com/h51mzayg5i?key=eed851e89793c68d16b05fa9d70c915a"; 
 
     function openAppModal() { document.getElementById('appModal').style.display = 'flex'; }
@@ -141,7 +144,7 @@
                 location.reload();
             }
         } catch (e) {
-            alert("Server Error.");
+            alert("Server Error. Try again.");
             location.reload();
         } finally {
             document.getElementById('loader').style.display = 'none';
