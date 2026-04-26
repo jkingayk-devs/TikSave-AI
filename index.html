@@ -8,50 +8,63 @@
     <script src="https://pl29259046.profitablecpmratenetwork.com/e8/11/06/e81106a3bff6ac57ce2a8d0938c2ef3e.js"></script>
 
     <style>
-        
-        #appModal { display: none; } /* download button */
-        :root { --tt-cyan: #00f2ea; --tt-pink: #ff0050; --tt-black: #010101; --tt-card: #121212; }
+        /* 1. BRAND COLORS & FONTS */
+        :root { 
+            --tt-cyan: #00f2ea; 
+            --tt-pink: #ff0050; 
+            --tt-black: #010101; 
+            --tt-card: #121212; 
+            --tt-green: linear-gradient(135deg, #22c55e, #16a34a);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--tt-black); color: white; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 10px; }
         
-        /* AD CONTAINERS */
-        .ad-728 { width: 100%; max-width: 728px; min-height: 95px; margin: 10px 0; display: flex; justify-content: center; overflow: hidden; }
-        .ad-320 { width: 100%; max-width: 320px; min-height: 55px; margin: 15px 0; display: flex; justify-content: center; overflow: hidden; }
-        .ad-native { width: 100%; margin: 20px 0; min-height: 150px; border-top: 1px solid #333; padding-top: 15px; }
+        /* 2. AD CONTAINERS - Standard sizes for maximum revenue */
+        .ad-728 { width: 100%; max-width: 728px; min-height: 95px; margin: 10px 0; display: flex; justify-content: center; }
+        .ad-320 { width: 100%; max-width: 320px; min-height: 55px; margin: 15px 0; display: flex; justify-content: center; }
 
+        /* 3. MAIN UI COMPONENTS */
         .container { width: 100%; max-width: 450px; z-index: 2; }
         .glass-card { background: var(--tt-card); border: 1px solid #333; border-radius: 32px; padding: 30px 20px; text-align: center; box-shadow: 0 0 40px rgba(0, 242, 234, 0.1); }
         .logo-area { font-size: 45px; margin-bottom: 10px; filter: drop-shadow(2px 0px 0px var(--tt-cyan)) drop-shadow(-2px 0px 0px var(--tt-pink)); }
+        
         input { width: 100%; padding: 18px; background: #222; border: 2px solid #333; border-radius: 18px; color: white; margin-bottom: 15px; outline: none; transition: 0.3s; }
         input:focus { border-color: var(--tt-cyan); }
-        .main-btn { width: 100%; padding: 18px; background: white; color: black; border: none; border-radius: 18px; font-size: 18px; font-weight: 800; cursor: pointer; }
+        
+        .main-btn { width: 100%; padding: 18px; background: white; color: black; border: none; border-radius: 18px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+        .main-btn:hover { background: var(--tt-cyan); transform: scale(1.02); }
+
+        /* 4. RESULT AREA (Hidden by default) */
         #result { margin-top: 25px; display: none; }
         video { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 1px solid #444; }
-        .dl-btn { display: block; width: 100%; padding: 16px; margin-bottom: 8px; border-radius: 14px; text-decoration: none; font-weight: 700; text-align: center; }
-        .nwm-btn { background: var(--tt-pink); color: white; }
-        .loading-dots { display: none; margin: 15px 0; color: var(--tt-cyan); font-weight: bold; }
+        
+        /* 5. PROFESSIONAL BUTTONS (The Logic you liked) */
+        .dl-btn { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; 
+            width: 100%; padding: 16px; margin-bottom: 10px; border-radius: 14px; 
+            text-decoration: none; font-weight: 700; transition: all 0.3s ease; cursor: pointer;
+        }
+        .nwm-btn { background: var(--tt-green); color: white; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3); }
+        .nwm-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(34, 197, 94, 0.5); }
+        
+        .reset-btn { background: #333; color: #888; border: 1px solid #444; font-size: 14px; }
+        .reset-btn:hover { background: #444; color: white; }
+
+        /* 6. MODAL STYLING */
+        #appModal { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9); z-index: 999; justify-content: center; align-items: center; 
+        }
+        .modal-content { background: #121212; padding: 30px; border-radius: 25px; border: 2px solid var(--tt-cyan); width: 90%; max-width: 350px; text-align: center; }
+
+        .loading-dots { display: none; margin: 15px 0; color: var(--tt-cyan); font-weight: bold; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     </style>
 </head>
 <body>
-    <!-- Download button starting -->
-    <button class="dl-btn" style="background:#444; color:white; border:none; cursor:pointer;" onclick="location.reload()">🔄 Download New Video</button>
 
-<p style="margin-top:15px; font-size:12px; color:#00f2ea; cursor:pointer; text-decoration:underline;" onclick="openAppModal()">📲 Get the Android App for HD</p>
-
-<div id="appModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:999; justify-content:center; align-items:center;">
-    <div style="background:#121212; padding:30px; border-radius:25px; border:2px solid #00f2ea; width:90%; max-width:350px; text-align:center;">
-        <h2 style="color:white; margin-bottom:10px;">Download App</h2>
-        <p style="color:#888; font-size:14px; margin-bottom:20px;">Faster downloads & no watermark directly on your phone.</p>
-        <a href="YOUR_APK_LINK_HERE" class="dl-btn nwm-btn" style="text-decoration:none;">Download APK Now</a>
-        <p style="margin-top:15px; color:#ff0050; cursor:pointer;" onclick="closeAppModal()">Close</p>
-    </div>
-</div>
-
-<!-- download button ending -->
     <div class="ad-728">
-        <script>
-            atOptions = { 'key' : '3cf84b24d3c6f1ee8b714aaad7e8a03f', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
-        </script>
+        <script>atOptions = { 'key' : '3cf84b24d3c6f1ee8b714aaad7e8a03f', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };</script>
         <script src="https://www.highperformanceformat.com/3cf84b24d3c6f1ee8b714aaad7e8a03f/invoke.js"></script>
     </div>
 
@@ -59,60 +72,82 @@
         <div class="glass-card">
             <div class="logo-area">🎵</div>
             <h1>TikSave AI</h1>
-            <p style="color:#888; font-size:13px; margin-bottom:25px;">Unlimited HD Downloads • v2.2</p>
+            <p style="color:#888; font-size:13px; margin-bottom:25px;">Unlimited HD Downloads • v2.3</p>
 
-            <input type="text" id="ttUrl" placeholder="Paste link here...">
-            <button class="main-btn" onclick="startProcess()">🚀 Remove Watermark</button>
+            <div id="input-area">
+                <input type="text" id="ttUrl" placeholder="Paste TikTok link here...">
+                <button class="main-btn" onclick="startProcess()">🚀 Remove Watermark</button>
+            </div>
 
             <div id="loader" class="loading-dots">⚡ AI PROCESSING...</div>
 
             <div id="result">
                 <div id="videoContainer"></div>
-                <a id="hdLink" class="dl-btn nwm-btn" onclick="triggerAd()" target="_blank">📥 Download HD Video</a>
-
-                <div class="ad-native">
-                    <script async="async" data-cfasync="false" src="https://pl29259349.profitablecpmratenetwork.com/0ca46243431b5cf7563746ff62de639d/invoke.js"></script>
-                    <div id="container-0ca46243431b5cf7563746ff62de639d"></div>
-                </div>
+                <a id="hdLink" class="dl-btn nwm-btn" onclick="handleDownloadClick()" target="_blank">⬇ Download HD Video</a>
+                
+                <button class="dl-btn reset-btn" onclick="resetPage()">🔄 Download New Video</button>
             </div>
+
+            <p style="margin-top:20px; font-size:12px; color:var(--tt-cyan); cursor:pointer; text-decoration:underline;" onclick="openAppModal()">📲 Install Android APK for faster HD</p>
         </div>
     </div>
 
     <div class="ad-320">
-        <script>
-            atOptions = { 'key' : '9af337ad78bd32f5be8cf1938eecda4a', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
-        </script>
+        <script>atOptions = { 'key' : '9af337ad78bd32f5be8cf1938eecda4a', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };</script>
         <script src="https://www.highperformanceformat.com/9af337ad78bd32f5be8cf1938eecda4a/invoke.js"></script>
     </div>
 
-<script>
-    //download button 
-    function openAppModal() {
-            document.getElementById('appModal').style.display = 'flex';
-        }
-    function closeAppModal() {
-            document.getElementById('appModal').style.display = 'none';
-        } //end button
-    // Direct Link / Popunder Trigger
-    const AD_LINK = "https://www.profitablecpmratenetwork.com/h51mzayg5i?key=eed851e89793c68d16b05fa9d70c915a"; 
+    <div id="appModal">
+        <div class="modal-content">
+            <h2 style="color:white; margin-bottom:10px;">Get the App</h2>
+            <p style="color:#888; font-size:14px; margin-bottom:20px;">Faster extraction, zero browser lag, and total watermark removal.</p>
+            <a href="https://raw.githubusercontent.com/jkingayk-devs/TikSave-AI/main/TikSave-AI_v2.3.apk" class="dl-btn nwm-btn" style="background:var(--tt-cyan); color:black;">Download APK v2.3</a>
+            <p style="margin-top:15px; color:var(--tt-pink); cursor:pointer; font-weight:bold;" onclick="closeAppModal()">Close</p>
+        </div>
+    </div>
 
-    function triggerAd() {
-        window.open(AD_LINK, '_blank');
+<script>
+    const AD_LINK = "https://www.profitablecpmratenetwork.com/h51mzayg5i?key=eed851e89793c68d16b05fa9d70c915a"; 
+    let adShown = false;
+
+    // --- 1. MODAL LOGIC ---
+    function openAppModal() { document.getElementById('appModal').style.display = 'flex'; }
+    function closeAppModal() { document.getElementById('appModal').style.display = 'none'; }
+
+    // --- 2. AD LOGIC ---
+    function triggerAd() { window.open(AD_LINK, '_blank'); }
+
+    // --- 3. DOWNLOAD BUTTON LOGIC (Ad + Download) ---
+    function handleDownloadClick() {
+        if (!adShown) {
+            triggerAd();
+            adShown = true; // Only show popup once per session
+        }
+        // The download will continue because the href is set in startProcess
     }
 
+    // --- 4. RESET LOGIC (Clears screen for next video) ---
+    function resetPage() {
+        document.getElementById('ttUrl').value = "";
+        document.getElementById('result').style.display = 'none';
+        document.getElementById('input-area').style.display = 'block';
+        adShown = false; // Reset ad tracker for the next video
+    }
+
+    // --- 5. MAIN CORE LOGIC ---
     async function startProcess() {
         const url = document.getElementById('ttUrl').value;
         
-        // --- AGGRESSIVE AD LOGIC: Ad triggers even if URL is wrong ---
+        // Aggressive Ad Trigger
         triggerAd(); 
 
         if (!url.includes('tiktok.com')) {
-            alert("❌ Invalid Link! Please paste a TikTok video URL.");
+            alert("❌ Please paste a valid TikTok link!");
             return;
         }
 
         document.getElementById('loader').style.display = 'block';
-        document.getElementById('result').style.display = 'none';
+        document.getElementById('input-area').style.display = 'none'; // Hide input during process
 
         const options = {
             method: 'GET',
@@ -132,10 +167,12 @@
                 document.getElementById('hdLink').href = video;
                 document.getElementById('result').style.display = 'block';
             } else {
-                alert("⚠️ Video is private or unavailable.");
+                alert("⚠️ Video not found. Check if it's private.");
+                resetPage();
             }
         } catch (e) {
-            alert("Server Busy. Try again.");
+            alert("API Connection Error. Try again.");
+            resetPage();
         } finally {
             document.getElementById('loader').style.display = 'none';
         }
