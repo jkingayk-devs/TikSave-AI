@@ -2,48 +2,54 @@
   "name": "TikDown",
   "short_name": "TikDown",
   "description": "Download TikTok videos without watermark.",
+  "id": "https://tiksave-ai.abrdns.com/TikDown.html",
   "start_url": "https://tiksave-ai.abrdns.com/TikDown.html",
-  "display": "fullscreen",
+  "scope": "https://tiksave-ai.abrdns.com/",
+  "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
   "background_color": "#ffffff",
   "theme_color": "#0d6efd",
   "orientation": "portrait",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "https://tiksave-ai.abrdns.com/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "https://tiksave-ai.abrdns.com/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "id": "Tikdown",
-  "dir": "auto",
-  "scope": "https://tiksave-ai.abrdns.com/TikDown.html",
-  "lang": "en",
   "shortcuts": [
     {
       "name": "TikSave",
-      "url": "tiksave-ai.abrdns.com",
-      "description": "All in tools here! build By Us!"
+      "short_name": "TikSave",
+      "description": "Open TikSave tools",
+      "url": "https://tiksave-ai.abrdns.com/TikDown.html"
     }
   ],
   "categories": [
-    "design",
-    "productivity",
+    "video",
     "social",
     "utilities",
-    "video"
+    "productivity"
   ],
   "share_target": {
+    "action": "https://tiksave-ai.abrdns.com/TikDown.html",
     "method": "POST",
-    "action": "tiksave-ai.abrdns.com",
+    "enctype": "application/x-www-form-urlencoded",
     "params": {
-      "title": "TikSave",
-      "text": "TikSave Tools",
-      "url": "tiksave-ai.abrdns.com"
+      "title": "title",
+      "text": "text",
+      "url": "url"
     }
   }
 }
